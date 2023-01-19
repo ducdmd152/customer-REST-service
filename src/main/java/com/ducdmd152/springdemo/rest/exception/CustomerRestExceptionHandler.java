@@ -20,6 +20,7 @@ public class CustomerRestExceptionHandler {
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
 
+	// catch all
 	@ExceptionHandler
 	public ResponseEntity<CustomerErrorResponse> handleGenericException(Exception exc) {
 		CustomerErrorResponse error = new CustomerErrorResponse();
