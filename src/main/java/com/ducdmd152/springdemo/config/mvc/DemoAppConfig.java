@@ -1,4 +1,4 @@
-package com.ducdmd152.springdemo.config;
+package com.ducdmd152.springdemo.config.mvc;
 
 import java.beans.PropertyVetoException;
 import java.util.Properties;

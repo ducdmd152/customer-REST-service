@@ -1,4 +1,4 @@
-package com.ducdmd152.springdemo.config;
+package com.ducdmd152.springdemo.config.mvc;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
