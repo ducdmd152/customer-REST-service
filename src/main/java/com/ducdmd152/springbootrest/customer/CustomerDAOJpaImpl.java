@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CustomerDAOImpl implements CustomerDAO {
+public class CustomerDAOJpaImpl implements CustomerDAO {
 
 	// need to inject the session factory
 	@Autowired
