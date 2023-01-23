@@ -3,9 +3,11 @@ package com.ducdmd152.springbootrest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -24,7 +26,7 @@ public class SpringSecurityConfig {
 	      .build());
 	    manager.createUser(User.withUsername("admin")
 	      .password(passwordEncoder.encode("admin"))
-	      .roles("USER", "ADMIN")
+	      .roles("EMPLOYEE", "USER", "ADMIN")
 	      .build());
 	    return manager;
 	}
@@ -48,15 +50,14 @@ public class SpringSecurityConfig {
 	
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http
-        .httpBasic()
-            .and()
-        .authorizeRequests()
-            .antMatchers("/actuator/**").hasAnyRole("ADMIN")
-            .anyRequest().authenticated()
-            .and()
-        .formLogin()
-            .permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/customers").hasRole("EMPLOYEE")
+		.antMatchers(HttpMethod.GET, "/api/customers/**").hasRole("EMPLOYEE")
+		.antMatchers(HttpMethod.POST, "/api/customers").hasAnyRole("MANAGER", "ADMIN")
+		.antMatchers(HttpMethod.POST, "/api/customers/**").hasAnyRole("MANAGER", "ADMIN")
+		.antMatchers(HttpMethod.PUT, "/api/customers").hasAnyRole("MANAGER", "ADMIN")
+		.antMatchers(HttpMethod.PUT, "/api/customers/**").hasAnyRole("MANAGER", "ADMIN")
+		.antMatchers(HttpMethod.DELETE, "/api/customers/**").hasRole("ADMIN").and().httpBasic().and().csrf()
+		.disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 		return http.build();
 	}
