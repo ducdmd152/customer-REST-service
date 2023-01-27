@@ -20,6 +20,8 @@
 ## Screens
   ![API Endpoints](https://github.com/ducdmd152/customer-REST-service/blob/main/readme.png)
 ## Technology
+- **Version 2.2: Spring Boot, Spring MVC REST, Spring Security, Spring Data JPA, Spring Data REST.**
+
 - Version 2.1: Spring Boot, Spring MVC REST, Spring Security, Spring Data JPA.
 
 - Version 2.0: Spring Boot, Spring MVC REST, Spring Security.
