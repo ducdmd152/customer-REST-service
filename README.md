@@ -16,7 +16,13 @@
     - Add new customer.
     - Update customer.
     - Delete customer.
-    
+- Authentication & Authorization:
+
+    | Role        | Username | Password |
+    |-------------|----------|----------|
+    | ADMIN, USER | admin    | admin    |
+    | USER        | user     | 123      |
+
 ## Screens
   ![API Endpoints](https://github.com/ducdmd152/customer-REST-service/blob/main/readme.png)
 ## Technology
