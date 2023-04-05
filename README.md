@@ -3,7 +3,7 @@
 --------------------------------------------------
 ## Table of Contents
 - [Description](#description)
-- [Screens](#screens)
+- [Endpoints](#endpoints)
 - [Technology](#technology)
 - [How can get started](#how-can-get-started)
 - [License & Copyright](#license--copyright)
@@ -23,7 +23,7 @@
     | ADMIN, USER | admin    | admin    |
     | USER        | user     | 123      |
 
-## Screens
+## Endpoints
   ![API Endpoints](https://github.com/ducdmd152/customer-REST-service/blob/main/readme.png)
 ## Technology
 - **Version 2.2: Spring Boot, Spring REST, Spring Security, Spring Data JPA, Spring Data REST.**
