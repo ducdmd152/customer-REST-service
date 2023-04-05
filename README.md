@@ -26,15 +26,15 @@
 ## Screens
   ![API Endpoints](https://github.com/ducdmd152/customer-REST-service/blob/main/readme.png)
 ## Technology
-- **Version 2.2: Spring Boot, Spring MVC REST, Spring Security, Spring Data JPA, Spring Data REST.**
+- **Version 2.2: Spring Boot, Spring REST, Spring Security, Spring Data JPA, Spring Data REST.**
 
-- Version 2.1: Spring Boot, Spring MVC REST, Spring Security, Spring Data JPA.
+- Version 2.1: Spring Boot, Spring REST, Spring Security, Spring Data JPA.
 
-- Version 2.0: Spring Boot, Spring MVC REST, Spring Security.
+- Version 2.0: Spring Boot, Spring REST, Spring Security.
 
-- Version 1.1: Spring MVC REST, Spring Security.
+- Version 1.1: Spring REST, Spring Security.
 
-- Version 1.0: Spring MVC REST.
+- Version 1.0: Spring REST.
 
 **Database: MySQL, [DDL script here](https://github.com/ducdmd152/customer-REST-service/tree/3173ccf49a61193b057cab986d3c43ebd903f016/sql-scripts)**
 
