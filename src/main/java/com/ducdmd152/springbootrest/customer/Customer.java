@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.ducdmd152.springbootrest.dto.APIPageableResponse;
+
 @Entity
 @Table(name="customer")
 public class Customer {
