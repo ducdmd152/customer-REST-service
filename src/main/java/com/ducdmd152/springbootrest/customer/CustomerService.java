@@ -7,5 +7,5 @@ import com.ducdmd152.springbootrest.dto.APIPageableResponse;
 public interface CustomerService {
 
 	Page<Customer> getCustomers();
-	APIPageableResponse<Customer> getPageableCustomers();
+	APIPageableResponse<Customer> getPageableCustomers(int page, int size);
 }

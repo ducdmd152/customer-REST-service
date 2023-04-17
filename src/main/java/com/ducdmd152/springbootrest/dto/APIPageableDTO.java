@@ -11,9 +11,9 @@ public class APIPageableDTO implements Serializable {
 	int pageNumber;
 	int pageSize;
 	int offset;
+	int numberOfElements;
 	int totalElements;
 	int totalPages;
-	int numberOfElements;
 	boolean sorted;
 	boolean first;
 	boolean last;
@@ -31,8 +31,8 @@ public class APIPageableDTO implements Serializable {
 		setNumberOfElements(page.getNumberOfElements());
 		setSorted(page.getSort().isSorted());
 		setFirst(page.isFirst());
-		setFirst(page.isLast());
-		setFirst(page.isEmpty());
+		setLast(page.isLast());
+		setEmpty(page.isEmpty());
 	}
 	
 	public int getPageNumber() {
@@ -47,6 +47,22 @@ public class APIPageableDTO implements Serializable {
 	public void setPageSize(int size) {
 		this.pageSize = size;
 	}
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
+	public boolean isEmpty() {
+		return empty;
+	}
+
+	public void setEmpty(boolean empty) {
+		this.empty = empty;
+	}
+
 	public int getTotalElements() {
 		return totalElements;
 	}

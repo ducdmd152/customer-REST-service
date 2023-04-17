@@ -22,10 +22,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	@Override
-	public APIPageableResponse<Customer> getPageableCustomers() {
-		int pageNumber = 2;
-		int size = 4;
-		Page<Customer> customerPage = customerJpaRepository.findAll(PageRequest.of(pageNumber, size));
+	public APIPageableResponse<Customer> getPageableCustomers(int page, int size) {
+		Page<Customer> customerPage = customerJpaRepository.findAll(PageRequest.of(page, size));
 		
 		return new APIPageableResponse<Customer>(customerPage);
 	}
