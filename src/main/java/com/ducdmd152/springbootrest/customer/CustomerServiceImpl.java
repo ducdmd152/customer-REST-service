@@ -3,6 +3,7 @@ package com.ducdmd152.springbootrest.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.ducdmd152.springbootrest.dto.APIPageableResponse;
@@ -23,9 +24,21 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public APIPageableResponse<Customer> getPageableCustomers(int page, int size) {
-		Page<Customer> customerPage = customerJpaRepository.findAll(PageRequest.of(page, size));
+		Page<Customer> customerPage = customerJpaRepository.findAll(
+				PageRequest.of(page, size, Sort.by("id").descending())
+				);
 		
 		return new APIPageableResponse<Customer>(customerPage);
 	}
+	
+	@Override
+	public APIPageableResponse<Customer> getPageableCustomers(int page, int size, Sort sort) {
+		Page<Customer> customerPage = customerJpaRepository.findAll(
+				PageRequest.of(page, size, sort)
+				);
+		
+		return new APIPageableResponse<Customer>(customerPage);
+	}
+
 
 }
